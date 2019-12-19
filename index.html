@@ -1,67 +1,76 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Lorem Ipsum - Dolor Sit</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-</head>
+---
+layout: default
+---
+<div class="container">
+	<div class="row">
+	{% if site.posts.size > 0 %}
+		{%- for post in paginator.posts -%}
+		{% if forloop.index <= 1 %}
+		<div class="col col-12">
+			<article class="article-first">
+				<div class="article-image-first" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.image}})">
+					<div class="article-content-first">
+						<div class="article-tag">
+						{% if post.tags.size >= 1 %}
+							{% for tag in post.tags %}
+							<a href="{{ site.baseurl }}/tags#{{tag}}" class="tag">{{ tag }}</a>
+							{% endfor %}
+						{% else %} {% endif %}
+						</div>
+						<h2 class="article-title"><a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a></h2>
+						<p class="article-excerpt">{% if post.description %}{{ post.description | strip_html | truncate: 163 }}{% else %}{{ post.content | strip_html | truncate: 163 }}{% endif %}</p>
+						<a href="{{ post.url | prepend: site.baseurl }}" class="button read-more">Read More</a>
+					</div>
+				</div>
+			</article> <!-- /.article-first -->
+		</div>
+		{% endif %}
 
-<body id="_index">
+		{% endfor %}
+	{% endif %}
+	</div>
+</div>
 
-<nav>
-<section>
-    <span class="home">
-        <a href="/">Home</a>
-    </span>
-    <span class="links">
-        <a href="/blog/">Blog</a>
-        <!-- <a href="/news/">News</a> -->
-        <a href="/contact/">Contact</a>
-        <a href="/about/">About</a>
-    </span>
-</section>
-</nav>
-
-<main>
-<h1>Lorem Ipsum</h1>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nibh
-tellus, vehicula ut maximus sed, fringilla a justo. Nunc vitae efficitur
-nisl. Ut sapien erat, pretium et commodo nec, rutrum bibendum magna. Sed
-ut massa massa. Etiam euismod neque lacus, id tincidunt risus iaculis a.
-Aliquam porta venenatis bibendum. Nam id varius nulla. Sed vitae purus
-ac odio ornare vestibulum vitae tempor arcu. Nunc non venenatis purus.
-Duis a augue at nulla congue egestas. Morbi mattis felis sit amet tortor
-euismod, fringilla viverra est elementum.
-</p>
-<p>
-Suspendisse vestibulum sed massa eu tincidunt. Pellentesque cursus, nisl
-at gravida suscipit, odio quam placerat mi, in iaculis nunc risus eu
-sapien. Suspendisse potenti. Nullam fermentum, tellus vel faucibus
-dictum, arcu ante rutrum nisi, ut iaculis eros felis a lectus. Etiam vel
-maximus nulla, sed mattis lectus. Aliquam commodo est massa, at
-vestibulum diam commodo vehicula. Nullam et tristique tortor. Praesent
-luctus, leo id mattis mattis, ex dui dapibus dolor, nec ultrices turpis
-nibh in sem. In efficitur, velit ut bibendum interdum, libero turpis
-mattis odio, non pharetra metus leo nec arcu. Maecenas auctor laoreet
-maximus. Donec metus massa, scelerisque a lacinia et, viverra eget
-metus. Aenean vitae tellus vehicula, mattis metus in, facilisis purus.
-In purus erat, fringilla ut diam et, convallis convallis nunc. Morbi
-sagittis interdum ipsum sit amet fringilla.
-</p>
-
-</main>
-
-<footer>
-<section>
-<p>&copy; 2019 Mitch McClellan</p>
-<p>
-    <a href="https://twitter.com/MitchJMcClellan">Twitter</a>
-    <a href="https://github.com/mitjmcc">GitHub</a>
-</p>
-</section>
-</footer>
-
-</body>
-</html>
+<div class="container">
+	<div class="row">
+		<div class="col col-12 col-t-8">
+			<div class="row">
+			{%- for post in paginator.posts offset: 1 -%}
+				<article class="article col col-12 col-t-6">
+					<div class="article-box">
+						<div class="article-head">
+							<a href="{{ post.url | prepend: site.baseurl }}" class="article-image" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.image}})">
+								<div class="image-overlay">
+									<span class="image-overlay-text">{{post.title | slice: 0}}</span>
+								</div>
+							</a>
+						</div>
+						<div class="article-content">
+							<div class="article-info">
+								<div class="article-date">
+									<span class="date"><time datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}{{ post.date | date: date_format }}</time></span>
+								</div>
+								<div class="article-tag">
+								{% if post.tags.size >= 1 %}
+									{% for tag in post.tags %}
+									<a href="{{ site.baseurl }}/tags#{{tag}}" class="tag">{{ tag }}</a>
+									{% endfor %}
+								{% else %} {% endif %}
+								</div>
+							</div>
+							<h2 class="article-title">
+								<a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
+							</h2>
+							<p class="article-excerpt">{% if post.description %}{{ post.description | strip_html | truncate: 135 }}{% else %}{{ post.content | strip_html | truncate: 135 }}{% endif %}</p>
+						</div>
+					</div>
+				</article> <!-- /.article -->
+			{% endfor %}
+			</div>
+			{% include pagination.html %}
+		</div>
+		<div class="col col-12 col-t-4">
+			{% include sidebar.html %}
+		</div>
+	</div>
+</div>
