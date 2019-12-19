@@ -1,29 +1,27 @@
 #-------------------------------
 # General Site Settings
 
-title: Galada Theme | Theme for Jekyll
-description: Galada is an easy and simple theme for Jekyll. Dark colors, give it a special exquisite look. A careful approach to design and features make it an ideal solution for a personal blog. # this means to ignore newlines until "baseurl:"
-baseurl: "/galada" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+title: Mitch McClellan | Painterly Code
+description: Heyo, I'm Mitch, I'm 24 and I'm a game developer from the US. I like shaders and post processings and I do technical art for the indie project I'm working on. # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://mitjmcc.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #-------------------------------
 # About Section
-author-name:   Natali Anderson
-author-avatar: 09.jpg
+author-name:   Mitch McClellan
+author-avatar: 21.jpg
 
 
 #-------------------------------
 # Contact links
-facebook:  https://facebook.com/ # Add your Facebook handle
-twitter:   https://twitter.com/ # Add your Facebook handle
-instagram: https://www.instagram.com/ # Add your Facebook handle
-pinterest: https://www.pinterest.com/ # Add your Facebook handle
+twitter:   https://twitter.com/MitchJMcClellan # Add your Twitter handle
+instagram: https://www.instagram.com/mitchjmcc/ # Add your Instagram handle
 
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
+# disqus-identifier: mr-brown # Add your shortname for Disqus Comment. For example mr-brown
 
 
 #-------------------------------
