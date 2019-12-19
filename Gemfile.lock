@@ -241,7 +241,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   github-pages
+  jekyll-paginate
+  jekyll-sitemap
   tzinfo-data
 
 BUNDLED WITH

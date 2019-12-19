@@ -1,7 +1,7 @@
 ---
 layout: page
-title:  The path to self-perfection
-date:   2018-08-23 16:03:30 +0300
+title:  An Evolving Character Controller
+date:   2019-12-18 11:00:00 +0300
 image:  05.jpg
 tags:   gamedev unity csharp
 ---
@@ -21,37 +21,37 @@ I was pretty heavily involved in [VGDev](http://vgdev.org), the video game devel
 
 Here is what the main update function of the Character Controller looks like, broken up:
 
-``` c#
+{% highlight c# %}
 // Get move inputs and scale the move speed by the axis values
 dx = InputManager.GetAxis("Vertical", player1);
 dz = InputManager.GetAxis("Horizontal", player1);
-```
+{% endhighlight %}
 We get the inputs and cache them.
 
 I want the player to move in the direction the camera is facing when the player presses the forward key, which would give the variable `dx` a positive value.
 
-``` c#
+{% highlight c# %}
 // Project camera direction onto xz-plane
 camForward = Vector3.Scale(cam.transform.forward, new Vector3(1, 0, 1)).normalized;
-```
+{% endhighlight %}
 
 The camera can be anywhere around the player, but I only want the direction the camera is facing to affect the character's horizontal motion. To accomplish this, I had to zero out the vertical component of the camera's forward vector. 
 
 Since Unity3D's coordinate system uses the y-axis as the vertical axis, this is the component I zero. Using some linear algebra, we get x and z components of the camera's direction vector.
 
 Here is one of the areas that has gone through the most change over the different iterations.
-``` c#
+{% highlight c# %}
 // Calculate the motion direction vector and scale it by the moveForce
 spd = Vector3.Normalize(dx * camForward + dz * cam.transform.right) * moveForce;
 // Create velocity vector and scale it by the speed
 desiredVelocity = spd + new Vector3(0, body.velocity.y, 0);
 // Set the velocity to the new velocity
 addVec = desiredVelocity - body.velocity;
-```
+{% endhighlight %}
 Essentially, all these over complicated statements boil down to scaling the input from the player in the direction the camera is facing. We can see attempts at trying to get this code to play nice with Unity3D's physics from all the references to the rigidbody's current velocity. 
 
 The final section of the function sloppily applies the over engineered velocity to the Character's current velocity. 
-``` c#
+{% highlight c# %}
 float mag = addVec.magnitude;
 mag = Mathf.Min(mag, moveForce);
 
@@ -64,7 +64,7 @@ body.velocity += addVec;
 transform.forward = Vector3.Lerp(transform.forward,
                                  (dx * camForward + dz * cam.transform.right).normalized,
                                  0.4f);
-```
+{% endhighlight %}
 The very final step is to modify the direction that the character is facing to make it consistent with the direction of motion.
 
 The main feature of this controller is that I tried to achieve is that the character will move in the direction the camera is pointed as discussed earlier. The nice side effect is the player can hold forward on the movement axis and control the direction of the character by turning the camera.
@@ -84,7 +84,7 @@ What resulted will look confusing, especially if you are unfamiliar with Unity3D
 The inputs are taken during the update function and then are sent to the server. The server enqueues these messages and as the server gets to them, it applies the inputs to the character.
 
 ### FixedUpdate()
-``` c#
+{% highlight c# %}
 if (isLocalPlayer) {
     // Get move inputs
     animation.SetBool("jump", (InputManager.GetButtonDown("Jump", player) && isGrounded));
@@ -99,12 +99,12 @@ if (isLocalPlayer) {
 }
 // Apply the player's state
 SyncState ();
-```
+{% endhighlight %}
 
 We still have mostly the same input caching from *Deep in Sheep!*. Now, there is a third movement input for jumping. Also, there are ternaries to prevent moving while in the air, which is a stylistic choice. The last parts of the update function transfer the player's inputs to the networking logic.
 
 ### SyncState()
-``` c#
+{% highlight c# %}
 // Decide whether to use server or predicted stateToUse
 // ...
 
@@ -112,13 +112,13 @@ We still have mostly the same input caching from *Deep in Sheep!*. Now, there is
 Vector3 camForward = Vector3.Scale(cam.transform.forward,
         PCUtil.XZPlane).normalized;
 forward = isGrounded ? camForward : body.transform.forward;
-```
+{% endhighlight %}
 
 The second function begins with selecting a `stateToUse`, a struct with the inputs from earlier or extrapolated inputs. The desired forward direction of the camera is calculated next, same as previously, but now with a reference to a static Vector3 representing the xz-plane. 
 
 Following this, the forward direction of the character is determined based on whether the character is jumping.
 
-``` c# 
+{% highlight c# %} 
 // Calculate the motion direction vector and scale it by the moveForce
 speed = (stateToUse.x * forward + stateToUse.z * cam.transform.right) * moveForce * Time.deltaTime;
 // Add Jump force
@@ -126,18 +126,18 @@ body.AddForce(stateToUse.y * body.transform.up
     + stateToUse.y / 4 * body.transform.forward, ForceMode.Impulse);
 // Add the player's state to the rigidbody velocity
 body.velocity += speed;
-```
+{% endhighlight %}
 
 
 
-``` c#
+{% highlight c# %}
 if (isGrounded) {
     // Face rigidbody in direction of movement
     PCUtil.AdjustRigidbodyForward(body, speed, cam.transform.forward, 5f);
     // Drag
     PCUtil.HorizontalDrag(body, body.velocity, drag);
 }
-```
+{% endhighlight %}
 
 The final component is similar to the previous controller. Here I moved the character direction modification to a separate function. 
 
@@ -148,15 +148,15 @@ I put in my own drag function that reduces the velocity overtime. From what I re
 The Manic Meerkat controller, the weird offspring of the two.
 
 Getting the input.
-``` c#
+{% highlight c# %}
 isJumping = Input.GetButton("Jump") && isGrounded;
 
 x = (isGrounded) ? Input.GetAxisRaw("Vertical") : Input.GetAxisRaw("Vertical") / airControlFactor;
 z = (isGrounded) ? Input.GetAxisRaw("Horizontal") : Input.GetAxisRaw("Horizontal") / airControlFactor;
-```
+{% endhighlight %}
 
 Determining direction of movement and speed of movement in that direction.
-``` c#
+{% highlight c# %}
 Vector3 direction = cam.transform.TransformVector(new Vector3(z, 0, x));
 
 if (direction.magnitude > 0) {
@@ -164,10 +164,10 @@ if (direction.magnitude > 0) {
 } else {
     speed = Vector3.zero;
 }
-```
+{% endhighlight %}
 
 Using the speed and jump to determine how the character will move next and in which direction he will face.
-``` c#
+{% highlight c# %}
 // Calculating velocity
 if (!isGrounded) {
     body.velocity = new Vector3(speed.x, body.velocity.y, speed.z);
@@ -183,19 +183,19 @@ if (isJumping) {
         jumpTime = Time.time;
     }
 }
-```
+{% endhighlight %}
 
 Time to actually apply the velocity to change the character's position.
-``` c#
+{% highlight c# %}
 if (isGrounded) {
     transform.position = transform.position + body.velocity * Time.deltaTime;
 }
-```
+{% endhighlight %}
 Finally, we'll kill the player character if they have fallen off the map.
-``` c#
+{% highlight c# %}
 if (transform.position.y < groundPlane.position.y) {
     Death();
 }
-```
+{% endhighlight %}
 
 Root motion sucks, unless you really, really need it.
