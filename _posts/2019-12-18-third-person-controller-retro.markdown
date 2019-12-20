@@ -1,8 +1,8 @@
 ---
-layout: page
+layout: post
 title:  An Evolving Character Controller
 date:   2019-12-18 11:00:00 +0300
-image:  05.jpg
+image:  23.jpg
 tags:   gamedev unity csharp
 ---
 
