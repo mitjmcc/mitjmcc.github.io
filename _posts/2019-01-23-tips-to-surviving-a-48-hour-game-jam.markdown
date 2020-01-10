@@ -2,7 +2,7 @@
 layout: post
 title:  Tips to Surviving a 48 Hour Game Jam
 date:   2019-01-23 11:00:00 +0300
-image:  23.jpg
+image:  26.jpg
 tags:   gamedev tips gamejam
 ---
 
