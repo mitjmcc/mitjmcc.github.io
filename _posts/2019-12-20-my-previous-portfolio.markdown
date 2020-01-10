@@ -6,8 +6,7 @@ image:  25.jpg
 tags:   shaders gamedev unity portfolio
 ---
 
-I'm going to archive the content of my previous portfolio website here as a record. <br>
-These are some games and side projects I worked on from 2015 to 2018, mostly while in the Georgia Tech club VGDev.
+> **NOTE:** I'm going to archive the content of my previous portfolio website here as a record. <br> These are some games and side projects I worked on from 2015 to 2018, mostly while in the Georgia Tech club VGDev.
 
 ## Projects
 
