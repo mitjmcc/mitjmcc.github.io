@@ -108,7 +108,7 @@ Also, look at the HLSL documentation of [lerp](https://docs.microsoft.com/en-us/
 ### Breakdown
 UV coordinates are normalized, so the u-axis and v-axis both go from `0.0` to `1.0`.
 
-On a quad like the one I use in the following screens, the top left corner maps to the UV coords `(0.0, 1.0)`, as the bottom right corner maps to `(1.0, 0.0)`.
+On a quad like the one I use in the following screens, the bottom left corner maps to the origin of UV coords `(0.0, 0.0)`, but the top right corner maps to `(1.0, 1.0)`.
 
 In `FourColorGradient()`, we can take advantage of the `0.0` to `1.0` range and use one of the components as the interpolator parameter of the `lerp` function.
 
@@ -139,7 +139,7 @@ lerp(color3, color4, uv.y)
 ![]({{site.baseurl}}/img/27/gradient_color3_color4.png)
 
 
-#### Brining it all together
+#### Bringing it all together
 
 Time to bring it all together!
 
