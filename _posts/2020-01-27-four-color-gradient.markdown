@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Four Color Gradient
-date:   2020-01-12 11:00:00 +0300
+date:   2020-01-27 21:00:00 +0300
 image:  27.jpg
 tags:   shaders unity
 glsl:   true
@@ -85,35 +85,77 @@ Shader "Custom/Gradient"
 
 ---
 
-### Breakdown
+### Confused?
 If all or some of this looks alien to you, I'd recommend checking out [Ronja's Shader Tutorials Basics](https://www.ronja-tutorials.com/basics.html), especially [Textures](https://www.ronja-tutorials.com/2018/03/23/textures.html).
-Also look at the HLSL documentation of [lerp](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-lerp).
 
-In `FourColorGradient()`, we can take advantage of the fact that UV coordinates give us an easy way to go from 0.0 to 1.0.
+But what about that funny looking `lerp` word? That stands for **Linear Interpolation**.
 
-So we can lerp between Color1 and Color2:
-![]({{site.baseurl}}/img/27/gradient_color1_color2.png)
+Unity has a straightforward article that you can read [here!](https://connect.unity.com/p/interpolation-part1)
 
-and between Color3 and Color4:
-![]({{site.baseurl}}/img/27/gradient_color3_color4.png)
+The part that pertains to us is this definition:
 
-These colors go from one to the other vertically because we used the y component of the UV coordinate.
+>What Is Interpolation?
+>
+>At its core, Interpolation is the act of creating new data between two values. In other words, allowing you to smoothly move from one number to another. In the animated examples you can see those values can be anything from Position, Visibility or ***Color***.
 
-Next, we mix the two gradients together by lerping between them in the same way, but horizontally this time using the x component.
-![]({{site.baseurl}}/img/27/shader_gradient.png)
+![](https://connect-prd-cdn.unity.com/p/images/061e8f8f-bea5-43ce-951d-2f0f7338e355_Lerp.gif)
+
+
+Also, look at the HLSL documentation of [lerp](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-lerp) for the actual specifics of the version of lerp we use here.
 
 ---
 
-### Alternative
-We can mix it up a bit by changing the way the two sides are mixed together.
-If we want three colors on the right and one on the left, we can do in `FourColorGradient()`:
+### Breakdown
+UV coordinates are normalized, so the u-axis and v-axis both go from `0.0` to `1.0`.
+
+On a quad like the one I use in the following screens, the top left corner maps to the UV coords `(0.0, 1.0)`, as the bottom right corner maps to `(1.0, 0.0)`.
+
+In `FourColorGradient()`, we can take advantage of the `0.0` to `1.0` range and use one of the components as the interpolator parameter of the `lerp` function.
+
+
+#### The First Gradient
+
+We can go from Color1 and Color2 along the v-axis vertically by lerping like this:
 
 {% highlight c %}
-lerp(lerp(color1, color2, uv.x),  lerp(color3, color4, uv.y), uv.x * uv.y);
+lerp(color1, color2, uv.y)
 {% endhighlight %}
 
-and get something that looks like:
-![]({{site.baseurl}}/img/27/gradient_two_to_one.png)
+#### Result
+
+![]({{site.baseurl}}/img/27/gradient_color1_color2.png)
+
+
+#### The Second Gradient
+
+We are also going to go from Color3 to Color4 in the same way:
+
+{% highlight c %}
+lerp(color3, color4, uv.y)
+{% endhighlight %}
+
+#### Result
+
+![]({{site.baseurl}}/img/27/gradient_color3_color4.png)
+
+
+#### Brining it all together
+
+Time to bring it all together!
+
+The two previous lerp function calls we made are outputting two new colors. So there is nothing stopping from lerping between these lerped colors like we did with Color1 and Color2, for example.
+
+Next, we mix the two lerped colors together by going between them in the same way, but horizontally this time using the x component of the UV's:
+
+{% highlight c %}
+lerp(lerp(color1, color2, uv.y),  lerp(color3, color4, uv.y), uv.x)
+{% endhighlight %}
+
+#### Result
+
+![]({{site.baseurl}}/img/27/shader_gradient.png)
+
+And that's it!
 
 ---
 
