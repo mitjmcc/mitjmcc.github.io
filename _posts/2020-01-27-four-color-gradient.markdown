@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  Four Color Gradient
+description: Breakdown of a shader replicating one of my favorite effects in After Effects, the 4-Color Gradient.
 date:   2020-01-27 21:00:00 +0300
 image:  27.jpg
-tags:   shaders unity
+tags:   shaders unity tutorial
 glsl:   true
 ---
 
