@@ -89,8 +89,10 @@ You can see what this looks like here, where I have set `vertex_number` to `35` 
 
 ![]({{site.baseurl}}/img/28/lowResClothVertices.png)
 
-For each bone of the high res mesh, I find the vertex closest to it along the central axis of the low resolution mesh.
+This is the method I use to manually select which vertices on the high res mesh get mapped to the low res mesh.
+For each bone of the high res mesh, `8` in total, I find the vertex closest to it along the central axis of the low resolution mesh.
 I stored these indices in an array, ordered to match the order of bone hierarchy.
+In the end, I have `8` vertices in this array. I did eyeball this for my meshes, but I made sure that the vertices I selected were equidistant and ran the whole length of the low res mesh.
 
 {% highlight c# %}
 int[] clothIndices = { ... };
