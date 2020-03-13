@@ -58,8 +58,11 @@ My first step was applying a Unity Cloth component to the low res mesh with pret
 Gravity is set to `0` to let the cloth flow behind the character.
 
 Next up is checking out how the cloth moves in Unity.
-
-![]({{site.baseurl}}/img/28/lowResAnimated.gif)
+`
+<video controls autoplay muted loop width="100%" height="auto">
+    <source src="/img/28/lowResAnimated.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
 
 Let's then check out the skeleton of the higher resolution mesh.
 
@@ -117,9 +120,18 @@ The solution to this is to set the low res mesh to a completely transparent mate
 
 And that's it!
 
-![]({{site.baseurl}}/img/28/highResSimulated.gif)
+<video controls autoplay muted loop width="100%" height="auto">
+    <source src="/img/28/highResSimulated.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
 
-![]({{site.baseurl}}/img/28/highResSimulatedWireframe.gif)
+<video controls autoplay muted loop width="100%" height="auto">
+    <source src="/img/28/highResSimulatedWireframe.mp4" type="video/mp4">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+<!-- ![]({{site.baseurl}}/img/28/highResSimulated.gif) -->
+
+<!-- ![]({{site.baseurl}}/img/28/highResSimulatedWireframe.gif) -->
 
 ---
 
