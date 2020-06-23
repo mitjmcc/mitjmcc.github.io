@@ -21,7 +21,7 @@ It seemed simple enough to me, so I said I'd help them out since I'd been meanin
 
 After smashing together an outline edge and a posterize effect into one post processing effect, we noticed that the effect didn't look too good on distant objects.
 
-Easy enough right, since you can get a `0` to `1` value of distance from the camera from the depth buffer.
+Easy enough right? Since you can get a `0` to `1` value of distance from the camera from the depth buffer.
 
 I won't go into it too much, but it wasn't as easy to find in HDRP as say the [Post Processing Stack V2](https://docs.unity3d.com/Packages/com.unity.postprocessing@2.3/manual/index.html).
 
@@ -55,7 +55,7 @@ Although this article focusses on demonstrating how to use the depth texture in 
 
 Now here is the shader followed by some comments highlighting the important parts.
 
-{% highlight c %}
+{% highlight hlsl %}
 Shader "Hidden/Shader/DepthExample"
 {
     SubShader

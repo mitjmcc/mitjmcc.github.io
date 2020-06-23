@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem 'github-pages', group: :jekyll_plugins
+gem 'rouge', '~> 3.20'
+# gem 'github-pages', group: :jekyll_plugins
 gem "bundler"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"

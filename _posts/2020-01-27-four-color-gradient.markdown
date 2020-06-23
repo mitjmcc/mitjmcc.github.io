@@ -33,7 +33,7 @@ Here is a live example of the shader written in GLSL.
 This shader uses UV coordinates to interpolate between the four colors we can choose.
 Here is the shader written in Unity3D's HLSL:
 
-{% highlight c %}
+{% highlight hlsl %}
 Shader "Custom/Gradient"
 {
     Properties
