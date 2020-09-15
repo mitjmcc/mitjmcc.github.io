@@ -1,7 +1,6 @@
 source "https://rubygems.org"
 
-gem 'rouge', '~> 3.20'
-# gem 'github-pages', group: :jekyll_plugins
+gem 'github-pages', group: :jekyll_plugins
 gem "bundler"
 gem "jekyll-paginate"
 gem "jekyll-sitemap"
@@ -10,5 +9,5 @@ gem "jekyll-sitemap"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.0" if Gem.win_platform?
+gem 'wdm', '~> 0.1.1'
 

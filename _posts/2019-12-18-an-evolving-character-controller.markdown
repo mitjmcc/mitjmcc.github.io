@@ -35,7 +35,7 @@ I want the player to move in the direction the camera is facing when the player 
 camForward = Vector3.Scale(cam.transform.forward, new Vector3(1, 0, 1)).normalized;
 {% endhighlight %}
 
-The camera can be anywhere around the player, but I only want the direction the camera is facing to affect the character's horizontal motion. To accomplish this, I had to zero out the vertical component of the camera's forward vector. 
+The camera can be anywhere around the player, but I only want the direction the camera is facing to affect the character's horizontal motion. To accomplish this, I had to zero out the vertical component of the camera's forward vector.
 
 Since Unity3D's coordinate system uses the y-axis as the vertical axis, this is the component I zero. Using some linear algebra, we get x and z components of the camera's direction vector.
 
@@ -48,9 +48,9 @@ desiredVelocity = spd + new Vector3(0, body.velocity.y, 0);
 // Set the velocity to the new velocity
 addVec = desiredVelocity - body.velocity;
 {% endhighlight %}
-Essentially, all these over complicated statements boil down to scaling the input from the player in the direction the camera is facing. We can see attempts at trying to get this code to play nice with Unity3D's physics from all the references to the rigidbody's current velocity. 
+Essentially, all these over complicated statements boil down to scaling the input from the player in the direction the camera is facing. We can see attempts at trying to get this code to play nice with Unity3D's physics from all the references to the rigidbody's current velocity.
 
-The final section of the function sloppily applies the over engineered velocity to the Character's current velocity. 
+The final section of the function sloppily applies the over engineered velocity to the Character's current velocity.
 {% highlight c# %}
 float mag = addVec.magnitude;
 mag = Mathf.Min(mag, moveForce);
@@ -76,10 +76,10 @@ In general, this character controller is over complicated. It did get the job do
 
 The original plan for *Deep in Sheep!* included networked multiplayer. My teammates and I quickly discovered that adding multiplayer would be too much work with too little time left before our deadline. A few months after we were done, I decided to prototype a multiplayer player controller.
 
-In many ways, my approach in this project was a few steps forward, a couple steps back. 
-I did eventually get networking working, but I started to get stuck on simplifying and enhancing my previous character controller. 
+In many ways, my approach in this project was a few steps forward, a couple steps back.
+I did eventually get networking working, but I started to get stuck on simplifying and enhancing my previous character controller.
 
-What resulted will look confusing, especially if you are unfamiliar with Unity3D's UNET, their networking high level API. The movement code is split between the update function and the client input dequeue function. The player controller's update needed to be split into two functions to accommodate multiple player controllers running at once. 
+What resulted will look confusing, especially if you are unfamiliar with Unity3D's UNET, their networking high level API. The movement code is split between the update function and the client input dequeue function. The player controller's update needed to be split into two functions to accommodate multiple player controllers running at once.
 
 The inputs are taken during the update function and then are sent to the server. The server enqueues these messages and as the server gets to them, it applies the inputs to the character.
 
@@ -95,7 +95,7 @@ if (isLocalPlayer) {
 
     // Store the move
     // Pass inputs to server
-    // ... 
+    // ...
 }
 // Apply the player's state
 SyncState ();
@@ -114,11 +114,11 @@ Vector3 camForward = Vector3.Scale(cam.transform.forward,
 forward = isGrounded ? camForward : body.transform.forward;
 {% endhighlight %}
 
-The second function begins with selecting a `stateToUse`, a struct with the inputs from earlier or extrapolated inputs. The desired forward direction of the camera is calculated next, same as previously, but now with a reference to a static Vector3 representing the xz-plane. 
+The second function begins with selecting a `stateToUse`, a struct with the inputs from earlier or extrapolated inputs. The desired forward direction of the camera is calculated next, same as previously, but now with a reference to a static Vector3 representing the xz-plane.
 
 Following this, the forward direction of the character is determined based on whether the character is jumping.
 
-{% highlight c# %} 
+{% highlight c# %}
 // Calculate the motion direction vector and scale it by the moveForce
 speed = (stateToUse.x * forward + stateToUse.z * cam.transform.right) * moveForce * Time.deltaTime;
 // Add Jump force
@@ -139,11 +139,11 @@ if (isGrounded) {
 }
 {% endhighlight %}
 
-The final component is similar to the previous controller. Here I moved the character direction modification to a separate function. 
+The final component is similar to the previous controller. Here I moved the character direction modification to a separate function.
 
 I put in my own drag function that reduces the velocity overtime. From what I remember, Unity's rigidbody drag was not achieving the effect I wanted.
 
- 
+
 ## Manic Meerkat
 The Manic Meerkat controller, the weird offspring of the two.
 
