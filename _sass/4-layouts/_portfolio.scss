@@ -1,7 +1,15 @@
 // http://css-workshop.com/hover-box-text-over-images-on-hover-and-more/
 // https://w3bits.com/css-image-hover-zoom/
 // https://codepen.io/hexagoncircle/pen/XWbWKwL
+// https://gijsroge.github.io/tilt.js/
 
+.data-tilt {
+    position:relative;
+    z-index: 0;
+}
+.data-tilt:hover {
+    z-index: 50;
+}
 .hvrbox,
 .hvrbox * {
     box-sizing: border-box;

@@ -291,30 +291,31 @@
       display: table;
       padding-top: 75%;
     }
-    .image-overlay {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: rgba(0,0,0,0.8);
-      opacity: 0;
-      transition: all 0.4s ease;
-    }
-    .image-overlay-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      font-size: 110px;
-      text-align: center;
-      letter-spacing: 2px;
-      color: $text;
-      transform: translate(-50%,-50%);
-      transition: all 0.4s ease 0.3s;
-      opacity: 0;
-    }
+    // Disable default home article preview letter transition
+    // .image-overlay {
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 0;
+    //   height: 100%;
+    //   background-color: rgba(0,0,0,0.8);
+    //   opacity: 0;
+    //   transition: all 0.4s ease;
+    // }
+    // .image-overlay-text {
+    //   position: absolute;
+    //   top: 50%;
+    //   left: 50%;
+    //   font-size: 110px;
+    //   text-align: center;
+    //   letter-spacing: 2px;
+    //   color: $text;
+    //   transform: translate(-50%,-50%);
+    //   transition: all 0.4s ease 0.3s;
+    //   opacity: 0;
+    // }
   }
   .article-content {
     .article-info {

@@ -38,11 +38,11 @@ layout: default
 			{%- for post in paginator.posts offset: 1 -%}
 				<article class="article col col-12 col-t-6">
 					<div class="article-box">
-						<div class="article-head">
-							<a href="{{ post.url | prepend: site.baseurl }}" class="article-image" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.image}})">
-								<div class="image-overlay">
-									<span class="image-overlay-text">{{post.title | slice: 0}}</span>
-								</div>
+						<div class="article-head" data-tilt data-tilt-max="-2" data-tilt-maxGlare="0.8" data-glare="true" data-tilt-scale=".95">
+                            <a href="{{ post.url | prepend: site.baseurl }}" class="article-image" style="background-image: url({{"/img/" | prepend: site.baseurl | append : post.image}})" >
+                                <div class="image-overlay">
+                                    <!-- <span class="image-overlay-text">{{post.title | slice: 0}}</span> Disable default home article preview letter transition -->
+                                </div>
 							</a>
 						</div>
 						<div class="article-content">
@@ -74,3 +74,6 @@ layout: default
 		</div>
 	</div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
