@@ -24,6 +24,36 @@ I'll break down the components of the overall node graph primarily using screens
 
 ---
 
+### Displacement and Subdivision!
+
+To set up our scene, we will need a few things in it to allow our nodes to shine.
+
+First we need to add a `UV Sphere`. Set the location and size to what you like.
+
+<a data-fancybox="gallery" href="{{site.baseurl}}/img/31/sphere_scene.jpg"><img src="{{site.baseurl}}/img/31/sphere_scene.jpg" style="display: block; margin-left: auto; margin-right: auto;"></a>
+
+In the `Modifier Properties` of your sphere, add a `Subdivision Modifier`. Set the levels to a value your computer can handle, but the higher the subdivisions, the higher the resolution of the displacement will be.
+
+Here's the settings on my `Subdivision Modifier`.
+<a data-fancybox="gallery" href="{{site.baseurl}}/img/31/subdivision.jpg"><img src="{{site.baseurl}}/img/31/subdivision.jpg" style="display: block; margin-left: auto; margin-right: auto;"></a>
+
+Next, open a `Shader Editor` and make sure your sphere is selected or the at least the material on the sphere, selected from the material dropdown list.
+We're going to set up our basic node graph with a `Displacement Node` and hook that into the `Material Output`. Also, set the `Space of the input height` to `World Space`.
+
+<a data-fancybox="gallery" href="{{site.baseurl}}/img/31/displacement_node.jpg"><img src="{{site.baseurl}}/img/31/displacement_node.jpg" style="display: block; margin-left: auto; margin-right: auto;"></a>
+
+Another setting we'll need is in the `1.` `Material Properties` tab while the sphere is selected. Open the `2.` `Displacement` drop down, and select `Displacement`.
+
+<a data-fancybox="gallery" href="{{site.baseurl}}/img/31/material_settings1.jpg"><img src="{{site.baseurl}}/img/31/material_settings1.jpg" style="display: block; margin-left: auto; margin-right: auto;"></a>
+
+<a data-fancybox="gallery" href="{{site.baseurl}}/img/31/material_settings2.gif"><img src="{{site.baseurl}}/img/31/material_settings2.gif" style="display: block; margin-left: auto; margin-right: auto;"></a>
+
+If you set the viewport to `Rendered` while in `Cycles`, you'll be able to preview the `Displacement`. But not actually because we haven't connected anything to the `Height` of our `Displacement` node.
+
+<a data-fancybox="gallery" href="{{site.baseurl}}/img/31/viewport.jpg"><img src="{{site.baseurl}}/img/31/viewport.jpg" style="display: block; margin-left: auto; margin-right: auto;"></a>
+
+---
+
 ### A Tale of Two Wave Texture Nodes
 
 A wave texture node set to triangle provides the bulk of the shape for the dunes.
