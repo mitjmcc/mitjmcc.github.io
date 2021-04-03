@@ -18,8 +18,11 @@
     position: relative;
     display: inline-block;
     overflow: hidden;
-    max-width: 100%;
+    // max-width: 60%;
     height: auto;
+    // flex: 50%;
+    // max-width: 50%;
+    padding: 0 4px;
 }
 .hvrbox img {
     max-width: 100%;
@@ -57,12 +60,18 @@
     font-size: 18px;
     display: inline-block;
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
+
     -moz-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+
+    -webkit-transition: top 0.25s ease-in-out;
+    -moz-transition: top 0.25s ease-in-out;
+    -o-transition: top 0.25s ease-in-out;
+    transition: top 0.25s ease-in-out;
 }
 .hvrbox .hvrbox-text_mobile {
     font-size: 15px;
@@ -121,16 +130,32 @@
 }
 
 .title {
-    font-size: 1.3rem;
+    font-size: 100%;
+    font-size: 1.5vw;
     font-weight: bold;
     line-height: 1.2;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position:absolute;
+    top: 85%;
+    left: 0;
+    width: 100%;
+    text-align:center;
+    // transform: translate(-50%, -50%);
     -moz-text-shadow: 2px 2px rgba(0,0,0,0.75);
     -webkit-text-shadow: 2px 2px rgba(0,0,0,0.75);
     text-shadow: 2px 2px rgba(0,0,0,0.75);
+
+    -webkit-transition: top 0.2s ease-in-out;
+    -moz-transition: top 0.2s ease-in-out;
+    -o-transition: top 0.2s ease-in-out;
+    transition: top 0.2s ease-in-out;
+}
+
+.hvrbox:hover > .title {
+    top: 10%;
+}
+
+.hvrbox:hover > .hvrbox-layer_top > .hvrbox-text {
+    top: 50%;
 }
 
 .videoWrapper {
@@ -151,3 +176,39 @@
     -webkit-box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
     box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
 }
+
+// Responsive Grid
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
