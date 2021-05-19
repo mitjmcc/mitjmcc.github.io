@@ -260,7 +260,7 @@
 // portfolio piece gif style
 .image-col-right{
     position: relative;
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 .image-box{
@@ -272,32 +272,60 @@
 
 .image-box a img {
     float: right;
+    width: 80%;
+    height: auto;
 }
 .image-box a video {
     float: right;
-    width: 70%;
+    width: 80%;
     height: auto;
 }
 
 .image-box-text{
     position: absolute;
-    height: 244px;
-    width: 175px;
-    bottom: 0;
-    left: 0px;
+    top: 50%;
+    left: 0%;
+    inline-size: 150px;
+    overflow-wrap: break-word;
 }
 
 .image-box-title {
     padding:0;
     margin:10px 0 10px 15px;
-    font-size:13;
+    font-size: 1vw;
     font-weight:bold;
     color:#7ae6dd;
 }
 
 .image-box-body {
     padding:0;
-    margin:10px 0 10px 15px;
-    font-size:16;
+    margin:10px 0 10px 11px;
+    font-size: 1vw;
     color:rgb(230,230,230);
+}
+
+@media screen and (max-width: 1100px) {
+    .image-box-text{
+        top: 30%;
+        inline-size: 100px;
+    }
+    .image-box-title {
+        font-size: 2.5vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .image-box-text{
+        top: 30%;
+        inline-size: 60px;
+    }
+    .image-box-title {
+        font-size: 3vw;
+    }
+    .image-box a img {
+        width: 70%;
+    }
+    .image-box a video {
+        width: 70%;
+    }
 }
