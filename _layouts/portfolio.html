@@ -10,17 +10,10 @@ layout: default
 
 <div class="container">
 	<div class="row">
-		<div class="col col-12">
-			<!-- <div class="page-image-box"> -->
-                <!-- <div class="page-image" style="background-image: url({{"/img/" | prepend: site.baseurl | append : page.image}})"></div> -->
-                <!-- <div class="page-image"> -->
-                    <div class="videoWrapper">
-                        <iframe width="560" height="315" src="{{ page.video }}" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
-                    </div>
-                <!-- </div> -->
-			<!-- </div> -->
-		</div>
-		<article class="col col-12 col-t-10 push-t-1 page">
+        <article class="col col-12 col-t-10 push-t-1 page">
+            <div class="videoWrapper">
+                <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="788.54" height="443" type="text/html" src="{{ page.video }}?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0"></iframe>
+            </div>
 			<div class="page-content">
 				<div class="page-head">
 					<h1 class="page-title">{{ page.title | escape }}</h1>

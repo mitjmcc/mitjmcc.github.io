@@ -7,6 +7,14 @@ image:  31.jpg
 tags:   blender cycles breakdown
 ---
 
+<div onclick="myFunction(this)" class="heart"></div>
+
+<script>
+function myFunction(elmnt) {
+  elmnt.classList.toggle("is-active");
+}
+</script>
+
 Hello everyone!
 
 This breakdown is on an entry I did for a challenge on [@HarryAlisavakis](https://twitter.com/HarryAlisavakis)'s *Technically Speaking* [discord](https://twitter.com/HarryAlisavakis/status/1191692720030584832).
@@ -117,7 +125,8 @@ At last here is the full graph of nodes.
 
 <!-- <img src="{{ site.baseurl }}/img/31/nodes.png" style="display: block; margin-left: auto; margin-right: auto;"> -->
 <a data-fancybox="gallery" href="{{site.baseurl}}/img/31/nodes.png"><img src="{{site.baseurl}}/img/31/nodes.png" style="display: block; margin-left: auto; margin-right: auto;"></a>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+
+<script src="{{site.baseurl}}/js/jquery-3.3.1.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
