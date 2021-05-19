@@ -12,9 +12,9 @@ permalink: /portfolio/
 <!-- First Piece -->
 <div class="image-col-right">
     <div class="image-box">
-        <a href="{% post_url 2020-11-02-harmony-quest-art-test-breakdown %}">
+        <a href="{% post_url 2020-11-02-harmony-quest-art-style-development %}">
             <video controls autoplay muted loop>
-                <source src="/img/17/Axeinthewoods.mp4" type="video/mp4">
+                <source src="/img/17/reliqua_forest.mp4" type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
             </video>
             <div class="image-box-text">
