@@ -22,13 +22,43 @@ I chose to do a screen transition effect from the Pokemon series, like in the vi
 *A battle transition from Pokemon Green (?)*
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
+<script>
+function hasWebGL() {
+    var supported;
+
+    try {
+        var canvas = document.createElement('canvas');
+        supported = !! window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+    } catch(e) { supported = false; }
+
+    try {
+        // let is by no means required, but will help us rule out some old browsers/devices with potentially buggy implementations: http://caniuse.com/#feat=let
+        eval('let foo = 123;');
+    } catch (e) { supported = false; }
+
+    if (supported === false) {
+        console.log("WebGL is not supported");
+    }
+
+    canvas = undefined;
+
+    return supported;
+}
+
+document.getElementById("canvas").disabled = !hasWebGL();
+</script>
+
+<div id="canvas">
 Below is a demo of the final shader! You can interact with it with your mouse.
 
 <!-- <script type="text/javascript" src="https://unpkg.com/glsl-canvas-js/dist/umd/glsl-canvas.min.js"></script> -->
 <canvas class="glslCanvas" data-fragment-url="{{ site.baseurl }}/frags/rpg_transition.frag" data-textures="{{ site.baseurl }}/img/30/shield.jpg,{{ site.baseurl }}/img/30/spiral.jpg" width="690" height="518"></canvas>
+
 {% include gl-canvas.html %}
+
 *Move your mouse from side to side to control the transition fade!*
 {: style="color:gray; font-size: 80%; text-align: center;"}
+</div>
 
 For this effect, I've lowered the resolution of the image and used a mask to accomplish the wipe transition.
 

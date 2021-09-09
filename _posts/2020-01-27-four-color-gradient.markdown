@@ -24,8 +24,38 @@ Let's get to it then!
 ### GLSL Example
 Here is a live example of the shader written in GLSL.
 
+<div id="canvas">
+
 <canvas class="glslCanvas" data-fragment-url="{{ site.baseurl }}/frags/helloworld.frag" width="690" height="518"></canvas>
 {% include gl-canvas.html %}
+
+</div>
+
+<script>
+function hasWebGL() {
+    var supported;
+
+    try {
+        var canvas = document.createElement('canvas');
+        supported = !! window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+    } catch(e) { supported = false; }
+
+    try {
+        // let is by no means required, but will help us rule out some old browsers/devices with potentially buggy implementations: http://caniuse.com/#feat=let
+        eval('let foo = 123;');
+    } catch (e) { supported = false; }
+
+    if (supported === false) {
+        console.log("WebGL is not supported");
+    }
+
+    canvas = undefined;
+
+    return supported;
+}
+
+document.getElementById("canvas").disabled = !hasWebGL();
+</script>
 
 ---
 
