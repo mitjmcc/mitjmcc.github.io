@@ -11,4 +11,4 @@ I started as a Software Engineer doing gameplay programming and porting in Casin
 
 I jumped into Technical Art after 3 years of doing it in my free time, joining a mobile games studio in 2021.
 
-I really enjoy being apart of online real-time VFX and Technical Art communities and building up other people with tutorials, tips and memes.
+I really enjoy being a part of online real-time VFX and Technical Art communities and building up other people with tutorials, tips and memes.
