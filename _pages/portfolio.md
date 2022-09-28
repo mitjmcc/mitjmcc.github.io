@@ -2,9 +2,10 @@
 layout: portfolio
 title: Portfolio
 image: 20.jpg
-video: https://www.youtube.com/embed/jsoeWHOqb3k
+video: https://www.youtube.com/embed/ZD52shapTik
 permalink: /portfolio/
 ---
+<!-- https://www.youtube.com/embed/jsoeWHOqb3kwhat -->
 
 <!-- http://fancyapps.com/fancybox/3/ -->
 <!-- <a data-fancybox="gallery" href="{{site.baseurl}}/img/28/lowResScarf.png"><img src="{{site.baseurl}}/img/28/lowResScarf.png"></a> -->
@@ -17,10 +18,11 @@ permalink: /portfolio/
                 <source src="/img/17/reliqua_forest.mp4" type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
             </video>
+            <!--
             <div class="image-box-text">
                 <div class="image-box-title">Art Style Dev</div>
-                <!-- <div class="image-box-body">Would you believe it's a cat?</div> -->
             </div>
+            -->
         </a>
     </div>
 </div>
@@ -32,25 +34,28 @@ permalink: /portfolio/
                 <source src="/img/portfolio/blip.webm" type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
             </video>
+            <!--
             <div class="image-box-text">
                 <div class="image-box-title">Unity Blip</div>
-                <!-- <div class="image-box-body">Would you believe it's a cat?</div> -->
             </div>
+            -->
         </a>
     </div>
 </div>
 <!-- Third Piece -->
+<!--
 <div class="image-col-right">
     <div class="image-box">
         <a href="{% post_url 2020-12-07-dunes-tech-art-challenge-breakdown %}">
             <img src="/img/portfolio/dunes.jpg">
             <div class="image-box-text">
                 <div class="image-box-title">Dunes TechArt Break Down</div>
-                <!-- <div class="image-box-body">Would you believe it's a cat?</div> -->
             </div>
         </a>
     </div>
 </div>
+-->
+
 <!-- Fourth Piece -->
 <div class="image-col-right">
     <div class="image-box">
@@ -59,10 +64,11 @@ permalink: /portfolio/
                 <source src="/img/portfolio/Card Foil Maha Vailo.m4v" type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
             </video>
+            <!--
             <div class="image-box-text">
                 <div class="image-box-title">Foil Card Shader</div>
-                <!-- <div class="image-box-body">Would you believe it's a cat?</div> -->
             </div>
+            -->
         </a>
     </div>
 </div>
