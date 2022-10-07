@@ -10,10 +10,21 @@ permalink: /portfolio/
 <!-- http://fancyapps.com/fancybox/3/ -->
 <!-- <a data-fancybox="gallery" href="{{site.baseurl}}/img/28/lowResScarf.png"><img src="{{site.baseurl}}/img/28/lowResScarf.png"></a> -->
 
+<div class="image-col-right">
+    <div class="image-box">
+        <!-- <a href="{% post_url 2020-12-07-dunes-tech-art-challenge-breakdown %}"> -->
+            <video controls autoplay muted loop>
+                <source src="/img/portfolio/Prawn.webm" type="video/webm">
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+        <!-- </a> -->
+    </div>
+</div>
+
 <!-- First Piece -->
 <div class="image-col-right">
     <div class="image-box">
-        <a href="{% post_url 2020-11-02-harmony-quest-art-style-development %}">
+        <!-- <a href="{% post_url 2020-11-02-harmony-quest-art-style-development %}"> -->
             <video controls autoplay muted loop>
                 <source src="/img/17/reliqua_forest.mp4" type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
@@ -23,15 +34,15 @@ permalink: /portfolio/
                 <div class="image-box-title">Art Style Dev</div>
             </div>
             -->
-        </a>
+        <!-- </a> -->
     </div>
 </div>
 <!-- Second Piece -->
 <div class="image-col-right">
     <div class="image-box">
-        <a href="#">
+        <!-- <a href="#"> -->
             <video controls autoplay muted loop>
-                <source src="/img/portfolio/blip.webm" type="video/mp4">
+                <source src="/img/portfolio/blip.webm" type="video/webm">
                 Sorry, your browser doesn't support embedded videos.
             </video>
             <!--
@@ -39,27 +50,16 @@ permalink: /portfolio/
                 <div class="image-box-title">Unity Blip</div>
             </div>
             -->
-        </a>
+        <!-- </a> -->
     </div>
 </div>
 <!-- Third Piece -->
-<!--
-<div class="image-col-right">
-    <div class="image-box">
-        <a href="{% post_url 2020-12-07-dunes-tech-art-challenge-breakdown %}">
-            <img src="/img/portfolio/dunes.jpg">
-            <div class="image-box-text">
-                <div class="image-box-title">Dunes TechArt Break Down</div>
-            </div>
-        </a>
-    </div>
-</div>
--->
+
 
 <!-- Fourth Piece -->
 <div class="image-col-right">
     <div class="image-box">
-        <a href="">
+        <!-- <a href=""> -->
             <video controls autoplay muted loop width="100%" height="auto">
                 <source src="/img/portfolio/Card Foil Maha Vailo.m4v" type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
@@ -69,7 +69,7 @@ permalink: /portfolio/
                 <div class="image-box-title">Foil Card Shader</div>
             </div>
             -->
-        </a>
+        <!-- </a> -->
     </div>
 </div>
 
