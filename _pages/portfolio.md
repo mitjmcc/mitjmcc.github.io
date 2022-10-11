@@ -13,7 +13,7 @@ permalink: /portfolio/
 <div class="image-col-right">
     <div class="image-box">
         <!-- <a href="{% post_url 2020-12-07-dunes-tech-art-challenge-breakdown %}"> -->
-            <video controls autoplay muted loop>
+            <video controls autoplay muted loop width="100%" height="auto">
                 <source src="/img/portfolio/Prawn.webm" type="video/webm">
                 Sorry, your browser doesn't support embedded videos.
             </video>
@@ -25,7 +25,7 @@ permalink: /portfolio/
 <div class="image-col-right">
     <div class="image-box">
         <!-- <a href="{% post_url 2020-11-02-harmony-quest-art-style-development %}"> -->
-            <video controls autoplay muted loop>
+            <video controls autoplay muted loop width="100%" height="auto">
                 <source src="/img/17/reliqua_forest.mp4" type="video/mp4">
                 Sorry, your browser doesn't support embedded videos.
             </video>
@@ -41,7 +41,7 @@ permalink: /portfolio/
 <div class="image-col-right">
     <div class="image-box">
         <!-- <a href="#"> -->
-            <video controls autoplay muted loop>
+            <video controls autoplay muted loop width="100%" height="auto">
                 <source src="/img/portfolio/blip.webm" type="video/webm">
                 Sorry, your browser doesn't support embedded videos.
             </video>
