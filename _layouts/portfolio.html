@@ -2,27 +2,27 @@
 layout: default
 ---
 <!-- 1. Add latest jQuery and fancybox files -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
 
 
 <div class="container">
-	<div class="row">
+    <div class="row">
         <article class="col col-12 col-t-10 push-t-1 page">
-            <div class="videoWrapper">
-                <iframe controls="2" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" width="788.54" height="443" type="text/html" src="{{ page.video }}?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0"></iframe>
-            </div>
-			<div class="page-content">
-				<div class="page-head">
-					<h1 class="page-title">{{ page.title | escape }}</h1>
-				</div>
+            <div class="page-content">
+                <div class="page-head">
+                    <h1 class="page-title">{{ page.title | escape }}</h1>
+                    <h2 class="page-subtitle">{{ page.role }}</h2>
+                    <h2 class="page-subtitle">{{ page.location }}</h2>
+                    <h2 class="page-subtitle">{{ page.email }}</h2>
+                </div>
 
-				<div class="page-body">
-					{{ content }}
-				</div>
-			</div>
-		</article> <!-- /.page -->
-	</div>
+                <div class="page-body">
+                    {{ content }}
+                </div>
+            </div>
+        </article> <!-- /.page -->
+    </div>
 </div>

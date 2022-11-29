@@ -2,7 +2,7 @@
 # General Site Settings
 
 title: Mitch McClellan | Painterly Code
-description: Heyo, I'm Mitch, I'm 24 and I'm a game developer from the US. I like shaders and post processings and I do technical art for the indie project I'm working on. # this means to ignore newlines until "baseurl:"
+description: Heyo, I'm Mitch, I'm a technical artist. # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mitjmcc.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -47,7 +47,7 @@ permalink: ':title/'
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-#  - jekyll-email-protect use when making an email link
+  - jekyll-email-protect # use when making an email link
 #  - jekyll-pdf-embed use to embed resume
 
 paginate: 7
