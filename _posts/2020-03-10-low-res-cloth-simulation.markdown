@@ -18,17 +18,17 @@ A hard problem for sure. After a long while of searching and experimenting with 
 
 > Our solution to this was to have a low-resolution cloth mesh used for simulating the jacket and then map that to the bones in the skeleton that was used for driving the skinned mesh.
 
-*From [this](https://www.gamasutra.com/view/feature/132771/the_secrets_of_cloth_simulation_in_.php) article on The Secrets Of Cloth Simulation In Alan Wake by Henrik Enqvist*
+*From [this](https://www.gamedeveloper.com/programming/the-secrets-of-cloth-simulation-in-i-alan-wake-i-) article on The Secrets Of Cloth Simulation In Alan Wake by Henrik Enqvist*
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 Here are the examples Henrik gives of Alan Wake's jacket:
 
-![](https://www.gamasutra.com/db_area/images/feature/4383/fig03a_cloth_silhouette_02.png)
+![](https://eu-images.contentstack.com/v3/assets/blt95b381df7c12c15d/blt0f1658c416e3c784/611f7cbf75830930bf6f5d03/fig03a_cloth_silhouette_02.png)
 
 Rigged higher resolution jacket
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-![](https://www.gamasutra.com/db_area/images/feature/4383/fig03b_cloth_silhouette.png)
+![](https://eu-images.contentstack.com/v3/assets/blt95b381df7c12c15d/bltd650aa42ad7254a4/611f7cc10804be31fb7b1802/fig03b_cloth_silhouette.png)
 
 Cloth simulated lower resolution jacket
 {: style="color:gray; font-size: 80%; text-align: center;"}
