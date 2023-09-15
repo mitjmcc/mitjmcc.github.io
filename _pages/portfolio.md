@@ -4,7 +4,7 @@ title: Mitch McClellan - Portfolio
 role: Technical Artist
 location: United States
 email: mitche<!-- abc@def -->lljmcclellan@g<!-- @abc.com -->mail.com
-image: 20.jpg
+image:
 video: https://www.youtube.com/embed/Zdb68Pk4PjQ
 permalink: /portfolio/
 ---
