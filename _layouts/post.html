@@ -11,6 +11,28 @@ layout: default
 	</div>
 </div>
 
+<script>
+/* Generate a share link for the user's Mastodon domain */
+function MastodonShare(e)
+{
+    // Gather the source text and URL
+    src = "{{ page.title | uri_escape }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}";
+
+    // Gather the Mastodon domain
+    domain = prompt("Enter your Mastodon domain", "mastodon.gamedev.place");
+
+    if (domain == "" || domain == null){
+        return;
+    }
+
+    // Build the URL
+    url = "https://" + domain + "/share?text=" + src;
+
+    // Open a window on the share page
+    window.open(url, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
+}
+</script>
+
 <div class="container">
 	<div class="row">
 		<article class="col col-12 col-t-8 post">
@@ -48,23 +70,31 @@ layout: default
 								<a class="share-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ site.baseurl }}{{ page.url }}"
 								onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
 								title="Share on Facebook" rel="nofollow">
-									<i class="ion ion-logo-facebook"></i>
+                                    <ion-icon name="logo-facebook"></ion-icon>
 								</a>
+							</li>
+
+                            <li class="share-item">
+                                <a class="share-mastadon" href=""
+                                    onclick="MastodonShare(this.share); return false;"
+                                    title="Share on Mastodon" rel="nofollow">
+                                    <ion-icon name="logo-mastodon"></ion-icon>
+                                </a>
 							</li>
 
 							<li class="share-item">
 								<a class="share-twitter" href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
 								onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
 								title="Share on Twitter" rel="nofollow">
-									<i class="ion ion-logo-twitter"></i>
+                                    <ion-icon name="logo-twitter"></ion-icon>
 								</a>
 							</li>
 
 							<li class="share-item">
-								<a class="share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title | uri_escape }}&summary={{ page.description | uri_escape }}&source={{ site.title | uri_escape }}"
+								<a class="share-linkedin" href="https://www.linkedin.com/feed/?shareActive=true&text={{ page.title }}%0A{{ page.description }}%0A{{ site.url }}{{ site.baseurl }}{{ page.url }}"
 								onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
 								title="Share on LinkedIn" rel="nofollow">
-									<i class="ion ion-logo-linkedin"></i>
+                                    <ion-icon name="logo-linkedin"></ion-icon>
 								</a>
 							</li>
 
@@ -72,7 +102,7 @@ layout: default
 								<a class="share-pinterest" href="http://pinterest.com/pin/create/button/?url={{ site.url }}{{ page.url }}&amp;media={{ site.url }}{{ site.baseurl }}/img/{{ page.image }}&amp;description={{ page.title | uri_escape }}"
 								onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=900,height=500,toolbar=1,resizable=0'); return false;"
 								title="Share on Pinterest" rel="nofollow">
-									<i class="ion ion-logo-pinterest"></i>
+                                    <ion-icon name="logo-pinterest"></ion-icon>
 								</a>
 							</li>
 						</ul>
@@ -82,12 +112,12 @@ layout: default
 				<div class="post-navigation">
 					{% if page.previous.url %}
 					<a href="{{ site.baseurl }}{{page.previous.url}}" class="prev">
-						<div class="post-nav-arrow"><i class="ion ion-ios-arrow-round-back"></i> Previous Article</div>
+						<div class="post-nav-arrow"><ion-icon name="chevron-back-outline"></ion-icon> Previous Article</div>
 						<h2 class="post-nav-title">{{page.previous.title}}</h2>
 					</a>
 					{% endif %} {% if page.next.url %}
 					<a href="{{ site.baseurl }}{{page.next.url}}" class="next">
-						<div class="post-nav-arrow">Next Article <i class="ion ion-ios-arrow-round-forward"></i></div>
+						<div class="post-nav-arrow">Next Article <ion-icon name="chevron-forward-outline"></ion-icon></div>
 						<h2 class="post-nav-title">{{page.next.title}}</h2>
 					</a>
 					{% endif %}

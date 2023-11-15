@@ -1,6 +1,6 @@
 Mitch McClellan - Painterly Code - Blog
 ======
-Personal and tutorial blog of Mitch McClellan. Portfolio soon too.
+Personal and tutorial blog of Mitch McClellan.
 
 * * *
 

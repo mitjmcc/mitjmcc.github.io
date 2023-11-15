@@ -6,16 +6,20 @@
           <h2 class="logo-title">
             <a href="{{site.baseurl}}/" class="logo-text">Mitch M</a>
           </h2>
-          <div class="top"><i class="ion ion-ios-arrow-up"></i></div>
+          <div class="top"><ion-icon name="chevron-up-outline"></ion-icon></div>
         </div>
         <div class="footer-bottom">
           <div class="copyright">
-            <p>&copy; {{site.time | date: '%Y'}} Mitch McClellan</p>
+            <p>{{ t: 'copyright' }} &copy; {{ site.time | date: '%Y' }} {{ site.owner }}</p>
           </div>
           <div class="footer-social">
             <ul class="list-reset">
               {% if site.facebook %}
               <li><a href="{{ site.facebook }}">Facebook</a></li>
+              {% else %} {% endif %}
+
+              {% if site.mastodon %}
+              <li><a href="{{ site.mastodon }}">Mastodon</a></li>
               {% else %} {% endif %}
 
               {% if site.twitter %}

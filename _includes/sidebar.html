@@ -1,5 +1,5 @@
 <aside class="sidebar">
-  
+
   {% if page.id %}
   <div class="widget widget-recent">
     <h3 class="widget-title">Recent Posts</h3>
@@ -28,25 +28,31 @@
     <ul class="social-profiles list-reset">
       {% if site.facebook %}
       <li class="social-profiles-item">
-        <a href="{{ site.facebook }}" class="social-profiles-link"><i class="ion ion-logo-facebook"></i></a>
+        <a href="{{ site.facebook }}" class="social-profiles-link"><ion-icon name="logo-facebook"></ion-icon></a>
       </li>
       {% else %} {% endif %}
 
-       {% if site.twitter %}
+      {% if site.mastodon %}
       <li class="social-profiles-item">
-        <a href="{{ site.twitter }}" class="social-profiles-link"><i class="ion ion-logo-twitter"></i></a>
+        <a href="{{ site.mastodon }}" class="social-profiles-link"><ion-icon name="logo-mastodon"></ion-icon></a>
+      </li>
+      {% else %} {% endif %}
+
+      {% if site.twitter %}
+      <li class="social-profiles-item">
+        <a href="{{ site.twitter }}" class="social-profiles-link"><ion-icon name="logo-twitter"></ion-icon></a>
       </li>
       {% else %} {% endif %}
 
       {% if site.instagram %}
       <li class="social-profiles-item">
-        <a href="{{ site.instagram }}" class="social-profiles-link"><i class="ion ion-logo-instagram"></i></a>
+        <a href="{{ site.instagram }}" class="social-profiles-link"><ion-icon name="logo-instagram"></ion-icon></a>
       </li>
       {% else %} {% endif %}
 
       {% if site.pinterest %}
       <li class="social-profiles-item">
-        <a href="{{ site.pinterest }}" class="social-profiles-link"><i class="ion ion-logo-pinterest"></i></a>
+        <a href="{{ site.pinterest }}" class="social-profiles-link"><ion-icon name="logo-pinterest"></ion-icon></a>
       </li>
       {% else %} {% endif %}
     </ul>
@@ -62,7 +68,7 @@
       <div class="newsletter-group">
         <div class="newsletter-group-top">
           <label class="screen-reader-text" for="mce-EMAIL">Email address</label>
-          <i class="email-icon ion ion-ios-mail"></i>
+          <ion-icon class="email-icon" name="mail-outline"></ion-icon>
           <input class="newsletter-email required email" id="mce-EMAIL" type="text" name="EMAIL" placeholder="E-mail">
         </div>
         <input class="newsletter-button" id="mc-embedded-subscribe" type="submit" name="subscribe" value="Subscribe">
@@ -93,5 +99,5 @@
     {% endfor %}
     </ul>
   </div>
-  
+
 </aside> <!-- /.sidebar -->

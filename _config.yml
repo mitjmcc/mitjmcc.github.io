@@ -2,7 +2,10 @@
 # General Site Settings
 
 title: Mitch McClellan | Painterly Code
-description: Heyo, I'm Mitch, I'm a technical artist. # this means to ignore newlines until "baseurl:"
+owner: Mitch McClellan
+description: >- # this means to ignore newlines until "baseurl:"
+  I'm Mitch McClellan, I'm a Technical Artist and VFX Artist, and this is my blog and
+  portfolio website. Most of the articles cover topics related to gamedev, VFX, and shaders.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://mitjmcc.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -15,8 +18,9 @@ author-avatar: 21.jpg
 
 #-------------------------------
 # Contact links
-twitter:   https://twitter.com/MitchJMcClellan # Add your Twitter handle
-instagram: https://www.instagram.com/mitchjmcc/ # Add your Instagram handle
+mastodon:   https://mastodon.gamedev.place/@iamhand
+twitter:    https://twitter.com/MitchJMcClellan # Add your Twitter handle
+instagram:  https://www.instagram.com/mitchjmcc/ # Add your Instagram handle
 
 
 #-------------------------------
