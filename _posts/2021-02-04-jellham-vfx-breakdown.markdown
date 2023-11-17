@@ -2,7 +2,7 @@
 layout: post
 title:  Escape from Jellyham-8 VFX Breakdown
 description: Highlights of VFX made for a Global Game Jam 2021 game.
-date:   2021-02-04 01:00:00 +0300
+date:   2121-02-04 01:00:00 +0300
 image:  19.png
 tags:   unity vfx breakdown
 ---
