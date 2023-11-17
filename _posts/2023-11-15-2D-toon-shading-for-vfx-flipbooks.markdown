@@ -3,7 +3,7 @@ layout: post
 title:  2D Toon Shading for VFX Flipbooks
 description: Taking a flipbook VFX animation, creating normal map in Substance Designer, and rendering it all in Unity.
 date:   2023-11-15 01:00:00 +0300
-image:  32.avif
+image:  32.jpg
 tags:   unity vfx flipbook 2DFX substance-designer
 ---
 
