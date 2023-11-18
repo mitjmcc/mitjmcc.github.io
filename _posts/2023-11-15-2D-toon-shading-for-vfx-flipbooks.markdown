@@ -4,7 +4,7 @@ title:  2D Toon Shading for VFX Flipbooks
 description: Taking a flipbook VFX animation, creating normal map in Substance Designer, and rendering it all in Unity.
 date:   2023-11-15 01:00:00 +0300
 image:  32.jpg
-tags:   unity vfx flipbook 2DFX substance-designer
+tags:   unity vfx flipbook substance-designer portfolio-piece
 ---
 
 # Intro
@@ -254,6 +254,7 @@ Read the texture we created in the previous section using UV's that point to the
 Separate the color channels into separate variables.
 
 Add everything together here to use as a mask for the entire silhouette.
+
 Discard any fragment outside of the silhouette.
 
 <a data-fancybox="gallery" href="/img/32/17_sprite_toon_combinedShape.avif"><img src="/img/32/17_sprite_toon_combinedShape.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
@@ -266,54 +267,61 @@ Sample the normal map and get a vector of the normal direction.
 
 <a data-fancybox="gallery" href="/img/32/21_sprite_toon_normal.avif"><img src="/img/32/21_sprite_toon_normal.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Convert light angle parameter from degrees to radians
-Construct a global 2D light direction from that angle
-Convert this light direction to world space from object space to make it independent of the sprite rotation
-Get a gradient to mimic lighting by getting the dot product between the light and normal directions
+Convert light angle parameter from degrees to radians.
+
+Construct a global 2D light direction from that angle.
+
+Convert this light direction to world space from object space to make it independent of the sprite rotation.
+
+Get a gradient to mimic lighting by getting the dot product between the light and normal directions.
 
 <a data-fancybox="gallery" href="/img/32/20_sprite_toon_ndotl.avif"><img src="/img/32/20_sprite_toon_ndotl.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Store the camera view direction
-Compute a lighting dot product using a Valve Half Life style half vector for the specular highlight
+Store the camera view direction.
+
+Compute a lighting dot product using a Valve Half Life style half vector for the specular highlight.
 
 <a data-fancybox="gallery" href="/img/32/19_sprite_toon_ndoth.avif"><img src="/img/32/19_sprite_toon_ndoth.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Create a two stepped toon gradient from the NdotL gradient with a smooth step
+Create a two stepped toon gradient from the NdotL gradient with a smooth step.
 
 <a data-fancybox="gallery" href="/img/32/18_sprite_toon_lightIntensity.avif"><img src="/img/32/18_sprite_toon_lightIntensity.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Using the NdotH, create a tightened specular highlight which size is controlled by the Glossiness parameter
-Additionally, NdotH is multiplied by lightIntensity to ensure that the specular is only visible in the lit part of the shape
+Using the NdotH, create a tightened specular highlight which size is controlled by the Glossiness parameter.
+
+Additionally, NdotH is multiplied by lightIntensity to ensure that the specular is only visible in the lit part of the shape.
 
 <a data-fancybox="gallery" href="/img/32/15_spite_toon_specularIntensity.avif"><img src="/img/32/15_spite_toon_specularIntensity.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-To highlight the lit side even more, create a 2D fresnel gradient around the edges of the shape
+To highlight the lit side even more, create a 2D fresnel gradient around the edges of the shape.
 
 <a data-fancybox="gallery" href="/img/32/23_sprite_toon_rimDot.avif"><img src="/img/32/23_sprite_toon_rimDot.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Mask the rim highlight to only be visible on the lit part of the shape
-Create a two stepped toon gradient for the rim light
+Mask the rim highlight to only be visible on the lit part of the shape.
+
+Create a two stepped toon gradient for the rim light.
 
 <a data-fancybox="gallery" href="/img/32/24_sprite_toon_rimIntensity.avif"><img src="/img/32/24_sprite_toon_rimIntensity.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Now use all of our color parameters to construct the final object
-_Color here is the lit side and _AmbientColor is the shadow side
+Now use all of our color parameters to construct the final object.
+
+_Color here is the lit side and _AmbientColor is the shadow side.
 
 <a data-fancybox="gallery" href="/img/32/16_sprite_toon_baseColor.avif"><img src="/img/32/16_sprite_toon_baseColor.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Mix in the specular
+Mix in the specular.
 
 <a data-fancybox="gallery" href="/img/32/25_sprite_toon_specularColor.avif"><img src="/img/32/25_sprite_toon_specularColor.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-and rim light colors
+and rim light colors.
 
 <a data-fancybox="gallery" href="/img/32/22_sprite_toon_rimColor.avif"><img src="/img/32/22_sprite_toon_rimColor.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Give the shape under the goo animation a color
+Give the shape under the goo animation a color.
 
 <a data-fancybox="gallery" href="/img/32/27_sprite_toon_visibleCircleColor.avif"><img src="/img/32/27_sprite_toon_visibleCircleColor.avif" type="image/avif" style="display: block; margin-left: auto; margin-right: auto;" width="80%"></a>
 
-Finally mix in the outline around the shape and return the final color
+Finally mix in the outline around the shape and return the final color.
 
 <a data-fancybox href="/img/32/29_sprite_toon_animated.webm">
     <video id="myVideo" autoplay muted loop style="display: block; margin-left: auto; margin-right: auto;" width="100%" height="auto">
