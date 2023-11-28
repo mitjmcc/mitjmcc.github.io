@@ -13,9 +13,13 @@ layout: default
         <article class="col col-12 col-t-10 push-t-1 page">
             <div class="page-content">
                 <div class="page-head">
-                    <h1 class="page-title">{{ page.title | escape }}</h1>
+                    <!-- <h1 class="page-title">{{ page.title | escape }}</h1> -->
+                    <h1 class="page-title">{{ site.owner | escape }}</h1>
+
                     <h2 class="page-subtitle">{{ page.role }}</h2>
+
                     <h2 class="page-subtitle">{{ page.location }}</h2>
+
                     <h2 class="page-subtitle">{{ page.email }}</h2>
                 </div>
 

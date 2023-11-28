@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Harmony Quest Art Style Development
-description: Art tests for on hold project.
+title: Stylized Forest Environment
+description: Showcase of a forest scene with custom stylized foliage shaders and custom spline based path tool.
 date:   2020-11-02 01:00:00 +0300
 image:  17.webp
-tags:   unity 3D
+tags:   unity 3D portfolio-piece
 ---
 
 I created toon shading and environment VFX to help develop the style of an indie game project.

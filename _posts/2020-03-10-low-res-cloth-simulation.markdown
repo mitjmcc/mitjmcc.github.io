@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  Animating Realtime Cloth Using a Lower Resolution Substitute
-description: Breakdown of using a lower resolution cloth to animate a higher resolution mesh.
+title: Real-time Simulation of Skinned Mesh Cloth
+description: Breakdown of using a lower poly mesh to transfer cloth simulations to a higher poly, rigged mesh
 date:   2020-03-10 11:00:00 +0300
 image:  28.gif
-tags:   animation unity breakdown
+tags:   animation unity breakdown portfolio-piece
 ---
 
 ### Intro
