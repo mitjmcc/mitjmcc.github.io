@@ -373,7 +373,7 @@ font-size: 1.1em;
 .project a {
 display: block;
 text-decoration: none;
-color: #444444;
+color: $body-color;
 
 -webkit-transition: -webkit-transform 0.15s ease-out;
 transition: -webkit-transform 0.15s ease-out;
@@ -383,7 +383,7 @@ transition: transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
 
 .project a:hover {
 text-decoration: none;
-color: #4198E6;
+color: $link-color-hover;
 -webkit-transform: scale(1.025);
         transform: scale(1.025);
 }
