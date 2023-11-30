@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Real-time Simulation of Skinned Mesh Cloth
-description: Breakdown of using a lower poly mesh to transfer cloth simulations to a higher poly, rigged mesh
+description: Breakdown of using a low poly copy of a scarf mesh to transfer cloth simulations to a higher poly, rigged mesh using a C#
 date:   2020-03-10 11:00:00 +0300
 image:  28.gif
 tags:   animation unity breakdown portfolio-piece

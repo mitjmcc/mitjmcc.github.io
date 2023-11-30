@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2D Toon Shading for VFX Flipbooks
-description: Tutorial of a workflow for making 2D toon shaded sprites by creating a normal map in Substance Designer and rendering them  with custom shaders in Unity.
+description: Tutorial of a workflow for 2D toon shaded sprites by generating a normal map in Substance Designer and rendering the animated sprite with a custom HLSL shader in Unity
 date:   2023-11-15 01:00:00 +0300
 image:  32.jpg
 tags:   unity vfx flipbook substance-designer portfolio-piece
