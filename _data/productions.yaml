@@ -1,0 +1,30 @@
+# Entry example
+# - title:
+#   year:
+#   role:
+#   company:
+#   image
+
+- title: Ultimate Golf!
+  year: 2020
+  role: Technical Artist
+  company: HypGames
+  image: ultimate-golf.png
+
+- title: 8 Ball Smash Real 3D Pool
+  year: 2021
+  role: Technical Artist
+  company: HypGames
+  image: 8-ball-smash.png
+
+- title: NBA All-World
+  year: 2022
+  role: Technical Artist
+  company: HypGames
+  image: nba-all-world.png
+
+- title: Ultimate Fishing! Fish Game
+  year: 2023
+  role: Technical Artist II
+  company: HypGames
+  image: ultimate-fishing.png
