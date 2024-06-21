@@ -21,7 +21,7 @@ Painting in a shadow into the animation would not work because it would clash wi
 I came to the conclusion that I could generate a normal map and make a custom shader, and that would solve most of my problems.
 I don't like how most 2D games that use normal mapped lighting look, so I came up with the brilliant idea to use two step toon shading lighting instead.
 
-<a data-fancybox="gallery" href="https://unity.com/sites/default/files/styles/810_scale_width/public/2023-06/howto-dynamiclighting.jpg"><img src="https://unity.com/sites/default/files/styles/810_scale_width/public/2023-06/howto-dynamiclighting.jpg" style="display: block; margin-left: auto; margin-right: auto;" width="100%"></a>
+<a data-fancybox="gallery" href="https://web.archive.org/web/20230706032330im_/https://unity.com/sites/default/files/styles/810_scale_width/public/2023-06/howto-dynamiclighting.jpg"><img src="https://web.archive.org/web/20230706032330im_/https://unity.com/sites/default/files/styles/810_scale_width/public/2023-06/howto-dynamiclighting.jpg" style="display: block; margin-left: auto; margin-right: auto;" width="100%"></a>
 *Dynamic lighting in 2D using normal maps. Photo: Happy Harvest demo via Unity.*
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
