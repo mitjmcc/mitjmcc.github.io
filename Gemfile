@@ -7,6 +7,7 @@ group :jekyll_plugins do
     gem "jekyll-paginate"
     gem "jekyll-sitemap"
     gem 'jekyll-email-protect' # use when adding an email link
+    gem 'jekyll-feed'
     #gem "jekyll-pdf-embed" use to embed resume
 end
 

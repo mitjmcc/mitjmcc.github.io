@@ -1,18 +1,19 @@
 #-------------------------------
 # General Site Settings
 
-title: Mitch McClellan | Painterly Code
+title: Mitch McClellan
 owner: Mitch McClellan
 description: >- # this means to ignore newlines until "baseurl:"
   I'm Mitch McClellan, I'm a Technical Artist and VFX Artist, and this is my blog and
   portfolio website. Most of the articles cover topics related to gamedev, VFX, and shaders.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://mitjmcc.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://mitchmcclellan.com/" # the base hostname & protocol for your site, e.g. http://example.com
 
 
 #-------------------------------
 # About Section
-author-name:   Mitch McClellan
+author: Mitch McClellan
+author-name: Mitch McClellan
 author-avatar: 21.jpg
 
 
@@ -89,6 +90,7 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-email-protect # use when making an email link
+  - jekyll-feed
 #  - jekyll-pdf-embed use to embed resume
 
 paginate: 7
