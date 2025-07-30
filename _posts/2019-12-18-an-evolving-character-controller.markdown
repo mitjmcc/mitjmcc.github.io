@@ -17,7 +17,7 @@ This style of game requires a script that lets the player control where the char
 
 I was pretty heavily involved in [VGDev](http://vgdev.org), the video game development club, at Georgia Tech. As a whole, the club makes around five to seven games a semester, each lead by a different Project Lead.
 
-[*Deep in Sheep!*](http://vgdev.gtorg.gatech.edu/game/deep-in-sheep/) was the second game that I lead and developed at VGDev. In short, its a sheep soccer game about herding the most sheep. The main fun of the game is catching and rolling the sheep around before your opponent does.
+[*Deep in Sheep!*](https://www.gtvgdev.com/games-archive/deep-in-sheep) was the second game that I lead and developed at VGDev. In short, its a sheep soccer game about herding the most sheep. The main fun of the game is catching and rolling the sheep around before your opponent does.
 
 Here is what the main update function of the Character Controller looks like, broken up:
 
