@@ -3,7 +3,7 @@ layout: portfolio
 title: 2DFX Reel
 email: mitche<!-- abc@def -->lljmcclellan@g<!-- @abc.com -->mail.com
 image:
-video: https://www.youtube.com/watch?v=eLv6aFsLSvI
+video: https://www.youtube.com/embed/eLv6aFsLSvI
 permalink: /2DFX-reel/
 ---
 
