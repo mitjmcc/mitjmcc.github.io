@@ -20,9 +20,10 @@ author-avatar: 21.jpg
 #-------------------------------
 # Contact links
 mastodon:   https://mastodon.gamedev.place/@iamhand
-twitter:    https://twitter.com/MitchJMcClellan # Add your Twitter handle
+# twitter:    https://twitter.com/MitchJMcClellan # Add your Twitter handle
 instagram:  https://www.instagram.com/mitchjmcc/ # Add your Instagram handle
 
+mastodon-verification: rel="me"
 
 #-------------------------------
 # Comment Section (Disqus)
