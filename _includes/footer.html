@@ -19,7 +19,7 @@
               {% else %} {% endif %}
 
               {% if site.mastodon %}
-              <li><a href="{{ site.mastodon }}">Mastodon</a></li>
+              <li><a {{ site.mastodon-verification }} href="{{ site.mastodon }}">Mastodon</a></li>
               {% else %} {% endif %}
 
               {% if site.twitter %}
